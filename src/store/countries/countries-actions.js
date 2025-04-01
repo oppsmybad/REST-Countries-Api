@@ -18,8 +18,7 @@ export const setError = (err) => ({
 
 export const loadCountries =
     () =>
-    (dispatch, getState, { client, api }) => {
-        console.log(loadCountries);
+    (dispatch, _, { client, api }) => {
         dispatch(setLoading());
 
         client
