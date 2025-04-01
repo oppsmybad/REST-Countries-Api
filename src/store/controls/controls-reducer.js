@@ -1,4 +1,4 @@
-import { SET_REGION, SET_SEARCH } from "./controls-actions";
+import { CLEAR_CONTROLS, SET_REGION, SET_SEARCH } from "./controls-actions";
 
 const initialState = {
     search: "",
@@ -16,6 +16,11 @@ export const controlsReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 region: payload,
+            };
+        // reducer для очистки
+        case CLEAR_CONTROLS:
+            return {
+                initialState, // возвращаем дефолтное значение и очищаем контроллеры
             };
         default:
             return state;
